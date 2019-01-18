@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./form.js"></script>
+    <title>Scoutron Ranking</title>
+    <style>
+        .a{
+            display: inline-block;
+        }
+        .b{
+            display: inline-block;
+        }
+    </style>
+    <script type="text/javascript" src="./ranking.js"></script>
+</head>
+
+<body>
+   <a href="./index.html" class="back">Back</a>
+   <h1>Ranking - Scoutron 2019</h1>
+   <table class="table" id="table">
+   <form action="" method="POST">
+        <table class="table">
+            <tbody>
+                <tr><th colspan="6">Weights</th>
+                </tr>
+                <tr>
+                    <td>Switch Teleop<br/><input type="number" step="0.1" name="Switch_Teleop" /></td>
+                    <td>Scale Teleop<br/><input type="number" step="0.1" name="Scale_Teleop" /></td>
+                    <td>Vault<br/><input type="number" step="0.1" name="Vault" /></td>
+                    <td>Auton Line<br/><input type="number" step="0.1" name="Auton_Line" /></td>
+                    <td>Platform<br/><input type="number" step="0.1" name="Platform" /></td>
+                    <td>Scale Auton<br/><input type="number" step="0.1" name="Scale_Auton" /></td>
+                </tr>
+                <tr>
+                    <td>Switch Auton<br/><input type="number" step="0.1" name="Switch_Auton" /></td>
+                    <td>Auton Quest<br/><input type="number" step="0.1" name="Auton_Quest" /></td>
+                    <td>Final Boss<br/><input type="number" step="0.1" name="Final_Boss" /></td>
+                    <td>Climb Teleop<br/><input type="number" step="0.1" name="Climb_Teleop" /></td>
+                    <td>Speed<br/><input type="number" step="0.1" name="Speed" /></td>
+                    <td>Outcome<br/><input type="number" step="0.1" name="Outcome" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Total Game Points<br/><input type="number" step="0.1" name="Total_Game_Points" /></td>
+                    <td colspan="2">Foul Points<br/><input type="number" step="0.1" name="Foul_Points" /></td>
+                    <td colspan="2">Number of Fouls<br/><input type="number" step="0.1" name="Number_Of_Fouls" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6"><input type="submit" value="Fetch rankings" /></td>
+                </tr>
+            </tbody>
+        </table>
+     </form>
+     <br/>
+    <table class="table">
+        <tbody id="ranks">
+            <tr>
+                <th colspan = "3">
+                    Best Matches
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    Match
+                </th>
+                <th>
+                    Team Number
+                </th>
+                <th>
+                    Weight
+                </th>
+            <tr>
+                <td>
+                    #1
+                </td>
+                <td></td><td></td>
+            </tr>
+            <tr>
+                <td>
+                    #2
+                </td>
+                <td></td><td></td>
+            </tr>
+            <tr>
+                <td>
+                    #3
+                </td>
+                <td></td><td></td>
+            </tr>
+            <tr>
+                <td>
+                    #4
+                </td>
+                <td></td><td></td>
+            </tr>
+            <tr>
+                <td>
+                    #5
+                </td>
+                <td></td><td></td>
+            </tr>
+            <tr>
+                <td>
+                    #6
+                </td>
+                <td></td><td></td>
+            </tr>
+            <tr>
+                <td>
+                    #7
+                </td>
+                <td></td><td></td>
+            </tr>
+            <tr>
+                <td>
+                    #8
+                </td>
+                <td></td><td></td>
+            </tr>
+            <tr>
+                <td>
+                    #9
+                </td>
+                <td></td><td></td>
+            </tr>
+            <tr>
+                <td>
+                    #10
+                </td>
+                <td></td><td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

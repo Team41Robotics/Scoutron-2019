@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    	<script type="text/javascript" src="./form.js"></script>
+    	<script type="text/javascript" src="./team_profile.js"></script>
+    	<title>Scoutron Team Profiles</title>
+    	<style>
+		td:not(span){
+			font-weight: bold;
+		}
+            td span {
+                display: block;
+                font-weight: normal;
+            }
+    	</style>
+</head>
+         
+<body>
+    	<a href="./index.html" class="back">Back</a>
+     <h1>Team Profiles - Scoutron 2019</h1>
+     <form action="" method="POST">
+	     <input type="number" name="Team_Number" placeholder="Team #" />
+	     <input type="submit" value="Fetch Data" />
+     </form>
+    <table class="table" id="team_profile">
+        <tr>
+            <td colspan="90" id="Team_Number">Team Number</td>
+            <td colspan="90" id="Team_Name">Team Name</td>
+        </tr>
+        <tr>
+            <td colspan="120">PIT DATA</td>
+            <td colspan="60" rowspan="6" id="Robot_Pic">PIC OF ROBOT</td>
+        </tr>
+
+        <tr>
+            <td colspan="20" id="Wheel_Base">Wheel Base</td>
+            <td colspan="20" id="Wheel_Type">Wheel Type</td>
+            <td colspan="20" id="Switch_Ability">Switch</td>
+            <td colspan="20" id="Scale_Ability">Scale</td>
+			<td colspan="20" id="Vault_Ability">Vault</td>
+            <td colspan="20" id="Climb">Climb</td>
+        </tr>
+
+        <tr>
+            <td colspan="120">AUTON DATA</td>
+        </tr>
+        <tr>
+            <td colspan="40" id="Auton_Line">Passing the Auton-Line</td>
+            <td colspan="40" id="Switch_Auton">Switch</td>
+            <td colspan="40" id="Scale_Auton">Scale</td>
+        </tr>
+        <tr>
+            <td colspan="120">TELE-OP DATA</td>
+        </tr>
+        <tr>
+            <td colspan="24" id="Vault">Vault</td>
+            <td colspan="24" id="Scale_Teleop">Scale</td>
+			<td colspan="24" id="Switch_Teleop">Switch</td>
+            <td colspan="24" id="Platform">Reached Platform</td>
+			<td colspan="24" id="Climb_Teleop">Climbing</td>
+        </tr>
+		<tr>
+			<td colspan="180">GAME</td>
+		</tr>
+        <tr>
+            <td colspan="45" id="Climb_Teleop">Climbing</td>
+            <td colspan="45" id="Speed">Speed</td>
+			<td colspan="45" id="Auton_Quest">Auton-Quest</td>
+			<td colspan="45" id="Final_Boss">Final Boss</td>
+        </tr>
+		<tr>
+			<td colspan="180">FOULS</td>
+		</tr>
+        <tr>
+            <td colspan="90" id="Foul_Points">Foul Points</td>
+            <td colspan="90" id="Number_Of_Fouls">Foul Number</td>
+        </tr>
+        <tr>
+            <td colspan="90" id="Pit_Notes">Pit Notes</td>
+            <td colspan="90" id="Match_Notes">Match Notes</td>
+        </tr>
+        <tr>
+        	<form action="" method="POST">
+            <td colspan="90">
+                <label for="Select">What is this robot best suited for?</label>
+                <select name="Select">
+                    <option value="none" selected disabled>Select...</option>
+                    <option value="Scale">Scale</option>
+                    <option value="Switch">Switch</option>
+                    <option value="Vault">Vault</option>
+                    <option value="Mixed">Mixed</option>
+                    <option value="Defensive">Defensive</option>
+
+                </select>
+                </td>
+                <td colspan="90">
+                    <input type="submit" value="Fetch" />
+                </td>
+            </form>
+        </tr>
+
+
+
+
+
+    </table>
+</body>
+</html>
