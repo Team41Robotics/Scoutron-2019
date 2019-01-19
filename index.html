@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<head>
+    <script src="index.js"></script>
+	<head> 
 		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" />
     	<link href="./style.css" rel="stylesheet" />
 		<title>Scoutron</title>
@@ -9,11 +10,17 @@
 		<link rel="apple-touch-icon" href="/webapp/icon.png" />
 		<link rel="icon" href="/webapp/icon.png" />
 		<style>
-
+            @keyframes animation {
+                0% {background-color: white;}
+                25% {background-color: #d4ad42}
+                50% {background-color: #a38636}
+                75% {background-color: #856e30}
+                100% {background-color: maroon;}
+            }
 
             a, a:link{
                 background-color: brown;
-                color: red;
+                color: yellowgreen;
                 font-family:'VT323' ,Sans-serif;
                 outline:none;
                 text-align:center;
@@ -29,8 +36,13 @@
                 margin-bottom:.25em;
             }
             a:hover{
-                background-color: rgba(255, 255, 255, 0.3); 
+                background-color: rgba(255, 255, 255, 0.3);
+                color: yellowgreen; 
             }
+
+            a:visited {
+                color: yellowgreen;
+            }   
             h2{
                 text-align: center;
 		font-size: 50px;
