@@ -4,7 +4,6 @@
 <html>
 
 <head>
-	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" />
 	<link href="./style.css" rel="stylesheet" />
 	<meta name="viewport" content="width=device-width" />
 	<title>Scoutron Raw Match Data</title>
