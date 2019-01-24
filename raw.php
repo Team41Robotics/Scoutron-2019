@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width" />
 	<title>Scoutron Raw Match Data</title>
 	<style>
-		.table th, .table td {
+		table th, table td {
 			padding: 5px;
 		}
 	</style>
@@ -26,7 +26,7 @@
 			die();
 		}
 	?>
-	<table class="table" id="table">
+	<table id="table">
 		<thead>
 			<tr>
 			<?php
