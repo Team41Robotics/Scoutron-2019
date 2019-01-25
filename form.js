@@ -38,8 +38,6 @@ function randomize(){
 	    input.value = Math.round(Math.random()*200);
 	  } else if (input.type == "checkbox"){
 	    input.checked = (Math.round(Math.random()) == 1) ? true : false;
-	  } else if (input.type == "range"){
-	    input.value = Math.round(Math.random() * input.max);
 	  }
 	}
 	document.querySelector("select").selectedIndex = Math.round(Math.random()*4);

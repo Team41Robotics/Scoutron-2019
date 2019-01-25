@@ -2,11 +2,12 @@
 
     <head>
         <script type="text/javascript" src="./form.js"></script>
-    <link href="./style.css" rel="stylesheet" />
-        <title>Pit Input</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <link href="./style.css" rel="stylesheet" />
+        <link href="./alternateTableColors.css" rel="stylesheet" />
+        <title>Pit Scouting</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <style>
-            .f{
+            .f {
                 width:15em;
             }
             .key {
@@ -18,7 +19,7 @@
             }
         </style>
         <script type="text/javascript">
-            function formCallback(data){
+            function formCallback(data) {
                 if (data.logged_in){
                     document.querySelector("form").reset();
                     window.scrollTo(0, 0);

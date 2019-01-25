@@ -1,14 +1,13 @@
 <html>
-
 	<head>
 		<script type="text/javascript" src="./form.js"></script>
-	<link href="./style.css" rel="stylesheet" />
-		<title>Scouting</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<link href="./style.css" rel="stylesheet" />
+		<title>Match Scouting</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 		<script type="text/javascript">
 			function formCallback(data){
 				if (data.logged_in){
-			//document.getElemendById("status").innerHTML = "Successfully sent data on Team " + document.querySelector("input[name=Team_Number]").value;
+					// document.getElemendById("status").innerHTML = "Successfully sent data on Team " + document.querySelector("input[name=Team_Number]").value;
 					document.querySelector("form").reset();
 					window.scrollTo(0, 0);
 				} else {
@@ -16,6 +15,14 @@
 				}
 			}
 		</script>
+		<style>
+			tr {
+				background-color: rgba(0, 0, 255, 0.3);
+			}
+			tr.title {
+				background-color: rgba(255, 0, 0, 0.3); 
+			}
+		</style>
 	</head>
 
 	<body>
@@ -23,51 +30,51 @@
 		<a href="./index.html" class="back">Back</a>
 		<h1>Match Input - Scoutron Deep Space</h1>
 		<br> 
-	<p id="status"></p>
+		<p id="status"></p>
 		<form action="./form/input_match.php" method="POST">
 		<table id="table">
-			<tr>
+			<tr class="title">
 				<td colspan="2">
+					<label for="Team_Number">Enter team number below.</label>
 					<input type="number" placeholder="# Team" name="Team_Number" min="0" step="1" />
-					<label for="Team_Number">Enter team number above.
-					
-					</label>
 				</td>
 			</tr>
-			<tr>
+			<tr class="title">
 				<td colspan="2">Sandstorm</td>
 			</tr>
 			<tr>
 				<td> 
-					<input type="checkbox" id="cbox1" value="1" name="Auton_Line"/>
 					<label for="cbox1">Cargo</label>
+					<input type="checkbox" id="cbox1" value="1" name="Auton_Line" />
 				</td>
-				<td>
-					<input type="checkbox" id="cbox2" value="1" name="Hatch_Auton"/>
+				<td class="test">
 					<label for="cbox2">Hatch Panel</label>
-				</td></tr> 
-				<tr><td colspan="2">
-					<input type="checkbox" id="cbox3" value="1" name="Cargo_Auton" />
+					<input type="checkbox" id="cbox2" value="1" name="Hatch_Auton" />
+				</td>
+			</tr> 
+			<tr>
+				<td colspan="2">
 					<label for="cbox3">Move Past Auto Line</label>
+					<input type="checkbox" id="cbox3" value="1" name="Cargo_Auton" />
 				</td>
 			</tr>
-			<tr>
+			<tr class="title">
 				<td colspan="2">Teleop</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="number" placeholder="Hatch Plate #" name="Hatch_Teleop" min="0" step="1" />
 					<label for="Hatch_Teleop">Hatch Panels</label>
+					<input type="number" placeholder="Hatch Panel #" name="Hatch_Teleop" min="0" step="1" />
 				</td>
 				<td>
-					<input type="number" placeholder="Cargo #" name="Cargo_Teleop" min="0" step="1" />
 					<label for="Cargo_Teleop">Cargo</label>
-				</td></tr>
-			   
+					<input type="number" placeholder="Cargo #" name="Cargo_Teleop" min="0" step="1" />
+				</td>
+			</tr>
 			</tr>
 			<tr>
 				<td colspan="2">
-			<label for="Climb_Teleop">Climbing</label>
+					<label for="Climb_Teleop">Climbing</label>
 					<select name="Climb_Teleop">
 						<option value="NULL">Unknown</option>
 						<option value="0">Did not reach platform</option>
@@ -79,72 +86,74 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-			<label for="Speed">Speed</label>
-			<select name="Speed">
-				<option value="NULL">Unknown</option>
-				<option value="0">VERY slow</option>
-				<option value="1">Slow</option>
-				<option value="2">Medium</option>
-				<option value="3">Fast</option>
-				<option value="4">The Flash</option>
-			</select>
-			</tr>
-			<tr><td colspan="2">
-					<label for="Final_Score">Final Score</label>
+					<label for="Speed">Speed</label>
+					<select name="Speed">
+						<option value="NULL">Unknown</option>
+						<option value="0">VERY slow</option>
+						<option value="1">Slow</option>
+						<option value="2">Medium</option>
+						<option value="3">Fast</option>
+						<option value="4">The Flash</option>
+					</select>
 				</td>
+			</tr>
+			<tr class="title">
+				<td colspan="2">
+					Final Score
+				</td>
+			</tr>
+			<td colspan="2">
+				<label for="Outcome">Final Outcome</label>
+				<select name="Outcome">
+					<option value="NULL">Unknown</option>
+					<option value="0">Lose</option>
+					<option value="1">Tie (1 RP)</option>
+					<option value="2">Win (2 RP)</option>
+				</select>
+			</td>
 			<tr>
 				<td colspan="2">
-		<label for="Outcome">Final Outcome</label>
-		<select name="Outcome">
-			<option value="NULL">Unknown</option>
-			<option value="0">Lose</option>
-			<option value="1">Tie (1 RP)</option>
-			<option value="2">Win (2 RP)</option>
-		</select> 
-			 </tr>
-			<tr>
-				<td colspan="2">
-					<input type="number" placeholder="Score" name="Total_Game_Points" min="0" step="1" /> Game Points
-				</td></tr>
-			</tr>
-			<tr><td colspan="2">
-					<label for="Ranking_Points">Rankings Points</label>
+					<label for="Total_Game_Points">Game Points</label>
+					<input type="number" placeholder="Score" id="Total_Game_Points" name="Total_Game_Points" min="0" step="1" />
 				</td>
-			<tr>
+			</tr>
+			<tr class="title">
+				<td colspan="2">
+					Ranking Points
+				</td>
+			</tr>
 			<tr>
 				<td>
-					 <input type="checkbox" id="cbox5" value="0.5" name="HAB_Docking"/>
 					<label for="cbox5">HAB Docking</label>
+					<input type="checkbox" id="cbox5" value="0.5" name="HAB_Docking"/>
 				</td>
 				<td>
-					 <input type="checkbox" id="cbox6" value="0.5" name="Complete_Rocket"/>
 					<label for="cbox6">1 Complete Rocket</label>
+					<input type="checkbox" id="cbox6" value="0.5" name="Complete_Rocket"/>
 				</td>
-				
-			<tr>
-				<td colspan="6">Fouls</td>
+			</tr>
+			<tr class="title">
+				<td colspan="2">Fouls</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="number" placeholder="Foul Points" id="fp" name="Foul_Points" min="0" step="1" />
 					<label for="fp">Foul Points caused</label>
+					<input type="number" placeholder="Foul Points" id="fp" name="Foul_Points" min="0" step="1" />
 				</td>
 				<td>
-					<input type="number" placeholder="Number" id="#fouls" name="Number_Of_Fouls" min="0" step="1" />
-					<label for="#fouls">Total number of fouls</label>
+					<label for="fouls">Total number of fouls</label>
+					<input type="number" placeholder="Number" id="fouls" name="Number_Of_Fouls" min="0" step="1" />
 				</td>
 			</tr>
-			<tr>
+			<tr class="title">
 				<td colspan="2">
-			<label for="Notes">Notes</label>
+					<label for="Notes">Notes</label>
 					<textarea cols="40" rows="5" class="notes scroll" placeholder="Type Notes Here" name="Notes"></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-				  
 					<input type="submit" value="Update" />
-					
 				</td>
 			</tr>
 		</table>
