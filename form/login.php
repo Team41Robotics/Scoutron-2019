@@ -1,7 +1,9 @@
 <?php
 	session_start();
 	include("./sql.php");
-
+	$logged_in = false;
+	$username = false;
+	$admin = false;
 	if (isset($_POST["Username"]) && isset($_POST["Password"])){
 		$query = 'SELECT Password FROM Login WHERE Username="' . $_POST["Username"] . '"';
 		$result = getQuery($query)[0];
@@ -24,9 +26,9 @@
 		$_SESSION["admin"] = $admin;
 		if ($adminStat == 2) $_SESSION["ADMIN"] = "true";
 	}
-	//if ($_COOKIE["logged_in"] == "true"){
+	if ($_COOKIE["logged_in"] == "true"){
 		echo '{"logged_in": ' . $logged_in . ', "username": "' . $username . '", "admin": ' . $admin . '}';
-	//} else {
-	//	echo "{'logged_in': false}";
-	//}
+	} else {
+		echo "{'logged_in': false}";
+	}
 ?>

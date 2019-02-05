@@ -10,21 +10,21 @@ function formSubmit(event, form, formData){
 	var fileName = window.location.pathname.split("/").pop().split(".");
 	fileName.pop();
 	var filename = fileName.join(".");
-	event.preventDefault();
-	//if(!localStorage.storedRequests) localStorage.storedRequests = "{}";
-	//var storedRequests = JSON.parse(localStorage.storedRequests);
-	var form = this || form;
-	var formData = new FormData(form);
+	if (event.preventDefault) {event.preventDefault();}
+	if(!localStorage.storedRequests) localStorage.storedRequests = "{}";
+	var storedRequests = JSON.parse(localStorage.storedRequests);
+	//var form = this || form;
+	var formData = new FormData(form);	
 	var request = new XMLHttpRequest();
 	request.onerror = function(){
-		formCallback(storedRequests[filename][document.querySelector("input[name=Team_Number]").value]);
-	};
+		//formCallback(storedRequests[filename][document.querySelector("input[name=Team_Number]").value]);
+	};	
 	request.onreadystatechange = function(){
 		if (this.readyState == 4){
 			//storedRequests[filename][document.querySelector("input[name=Team_Number]").value] = request.responseText;
-			//localStorage.storedRequests = JSON.stringify(storedRequests);
+			localStorage.storedRequests = JSON.stringify(storedRequests);
 			formCallback(JSON.parse(request.responseText));
-		}
+		} 
 	};
 	request.open("POST", "./form/" + filename + ".php");
 	request.send(formData);

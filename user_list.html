@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+    <link href="./alternateTableColors.css" rel="stylesheet" />
+    <script type="text/javascript" src="./form.js"></script>
+    <title>Scoutron Ranking</title>
+    <style>
+        .a{
+            display: inline-block;
+        }
+        .b{
+            display: inline-block;
+        }
+    </style>
+    <script type="text/javascript" src="./ranking.js"></script>
+</head>
+
+<body>
+   <a href="./index.html" class="back">Back</a>
+   <h1>Input User Data</h1>
+   <h2>The data from this page will be used to randomly assign team41 members to scout teams</h2>
+    <table>
+        <tbody id="ranks">
+            <tr>
+                <th colspan = "3">
+                    Please Enter User Data for Competition
+                </th>
+            </tr>
+		<tr class="Competition_Name">
+		<td colspan="3">
+		<label for="Competition">Competition: </label>
+		<textarea cols="1" rows="1" class="Competition_Name" placeholder="Type Competition Name here" name="Competition_Name"></textarea>
+		</td>
+	    </tr>
+	    <tr>                
+		<th>
+                    Team41 Members
+                </th>	
+	    </tr>
+	    <tr>
+		<td><input name="User"></td>
+            </tr>
+	    <tr>
+		<td><input name="User"></td>
+            </tr>
+	    <tr>
+		<td><input name="User"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+	<tbody>
+		<tr><th>Other Teams That Are Competing</th><th>Times They are Competing</th></tr>
+		<tr class="Team_Name"><td><input name="Team"></td></td></tr>
+		<tr class="Team_Name"><td><input name="Team"></td></td></tr>
+		<tr class="Team_Name"><td><input name="Team"></td></td></tr>
+
+	</tbody>
+    </table>
+</body>
+
+</html>
