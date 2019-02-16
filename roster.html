@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <script src="index.js"></script>
+	<head> 
+    	<link href="./style.css" rel="stylesheet" />
+		<title>Roster</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-title" content="Scoutron" />
+		<link rel="apple-touch-icon" href="/webapp/icon.png" />
+	</head>
+		<body>
+			<a href="./index.html" class="back">Back</a>
+		<h1 style="font-size: 75px;">Roster</h1>
+		<h3 style="margin: 20px 20px 20px 20px;">Please enter in Team41 members going to Mount Olive</h3>
+		<h3 style="margin: 20px 20px 20px 20px;">ONLY ENTER MEMBERS IN THE ROSTER AND CREATE SCOUTING ASSIGMENTS ONCE!!!</h3>
+		<table>
+			<tbody id="table">
+				<th colspan="3">ROSTER</th>
+				<tr>
+					<td>Team41 Members</td>
+				</tr>
+				<tr><td input="team" placeholder="enter member id" id="teamID"></td></tr>
+			</tbody>
+		</table>
+		<button style="width: 200px; height: 100px;" onclick="sendTableData()">Create Scouting Assignments</button>
+		<button style="width: 200px; height: 100px;" onclick="addTeamMember()">Add Team Member</button>
+	</body>
+	<script type="text/javascript">
+
+		var idArray = new Array(localStorage.getItem("array"));
+
+
+		function sendTableData() {
+			idArray = localStorage.getItem("array");
+		}
+
+		function addTeamMember() {
+			var string = prompt("Enter Team41 Member ID: ", 1);
+			idArray.push(string);
+			var table = document.getElementById('table');
+  			var newRow = table.insertRow(-1);
+  			var cell0 = newRow.insertCell(0); 
+  			cell0.innerHTML = string; 
+  			localStorage.setItem("array", idArray);
+		}
+	</script>
+</html>

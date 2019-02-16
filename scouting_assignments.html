@@ -3,23 +3,66 @@
 	<head>
 		<link href="./style.css" rel="stylesheet" />
 	</head>
-	<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="jquery.js"></script>
+  <script src=""></script>
 	<a href="./index.html" class="back">Back</a>
 	<h1 style"text-align: center">Scouting Assignments</h1>
-
-
-<table>
-     <tbody>
-	<tr> 
-	    <th>Team41 Member</th>
-	    <th>Assigned Team to Scout</th>
-	    <th>Time</th>
-	<tr>
-	    <td>224560</td>
-	    <td>224560</td>
-	    <td>224560</td>
-	<tr>
-     </tbody>
-</table>
+  <table>
+        <tbody id="ranks">
+            <tr>
+                <th colspan = "3">     
+                    Scouting Assignments
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    Team41 Member
+                </th>
+                <th>
+                    Assigned Team to Scout
+                </th>
+                <th>
+                    Corresponding Times
+                </th>
+              </tr>
+        </tbody> 
+    </table>
+    <table>
+      <tbody id="ranks">        
+      </tbody>
+    </table>
 	</body>
-</html
+    <script type="text/javascript">
+      var teamMembers = localStorage.getItem("array").split(",");
+      teamMembers.splice(0,1); // Removes the blank person
+      var table = document.getElementById("ranks");
+      setTimeout(function() {
+        // Remove team 41 from the list
+        for(var i = 0; i < theTeams.length; i++) {
+          if(theTeams[i] == "frc41")
+            theTeams.splice(i, 1);
+        }
+
+        var teamsPerPerson = Math.round(theTeams.length / teamMembers.length);
+        var numLeftoverTeams = theTeams.length % teamMembers.length;
+        var count = 0;
+
+        // Create rows
+        for(var i = 0; i < teamMembers.length; i++) {
+          var row = table.insertRow(-1);
+          var cells = [row.insertCell(0), row.insertCell(1), row.insertCell(2)];
+          cells[0].innerHTML = teamMembers[i];
+          cells[1].innerHTML = "";
+          var extra = (numLeftoverTeams-- > 0 ? 1 : 0);
+          for(var p = 0; p < teamsPerPerson + extra; p++, count++) {
+            if(p!=0)
+              cells[1].innerHTML += ", "
+            cells[1].innerHTML += theTeams[count];
+          }
+        }
+      }, 2000);
+
+  </script>
+</html>
+
